@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>SignalGenerator &#8212; Physics 0.9 documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SimpleMixer" href="DSP.SimpleMixer.html" />
+    <link rel="prev" title="QuadratureSplitter" href="DSP.QuadratureSplitter.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="DSP.SimpleMixer.html" title="SimpleMixer"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="DSP.QuadratureSplitter.html" title="QuadratureSplitter"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Physics 0.9 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="DSP.QuadratureSplitter.html"
+                        title="previous chapter">QuadratureSplitter</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="DSP.SimpleMixer.html"
+                        title="next chapter">SimpleMixer</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/DSP.SignalGenerator.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="signalgenerator">
+<h1>SignalGenerator<a class="headerlink" href="#signalgenerator" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="DSP.SignalGenerator">
+<em class="property">class </em><code class="sig-prename descclassname">DSP.</code><code class="sig-name descname">SignalGenerator</code><span class="sig-paren">(</span><em class="sig-param">mode='analytic'</em>, <em class="sig-param">M=1024</em>, <em class="sig-param">components=None</em>, <em class="sig-param">rms=None</em><span class="sig-paren">)</span><a class="headerlink" href="#DSP.SignalGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Simulated signal generator for making test signals</p>
+<p>Method <code class="docutils literal notranslate"><span class="pre">signal()</span></code> returns a DigitalSignal object with the specified
+properties.  The attribute <code class="docutils literal notranslate"><span class="pre">S</span></code> has a complex signal.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">components</span></code> are specified, it is a Fourier series.  If not, it is
+random Gaussian noise.</p>
+<blockquote>
+<div><p>components - (list of lists) of Fourier components
+m -          (int) data indices
+mode -       (str) “real”, “analytic”, or “complex”
+S -          (DigitalSignal) dtype=complex ndarray subclass</p>
+</div></blockquote>
+<p class="rubric">Methods Summary</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#DSP.SignalGenerator.add_noise" title="DSP.SignalGenerator.add_noise"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_noise</span></code></a>([fraction])</p></td>
+<td><p>Adds Gaussian noise to the signal</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#DSP.SignalGenerator.show_components" title="DSP.SignalGenerator.show_components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_components</span></code></a>([in_mode])</p></td>
+<td><p>show the signal components in the specified mode</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#DSP.SignalGenerator.signal" title="DSP.SignalGenerator.signal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">signal</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Documentation</p>
+<dl class="method">
+<dt id="DSP.SignalGenerator.add_noise">
+<code class="sig-name descname">add_noise</code><span class="sig-paren">(</span><em class="sig-param">fraction=1</em><span class="sig-paren">)</span><a class="headerlink" href="#DSP.SignalGenerator.add_noise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds Gaussian noise to the signal</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="DSP.SignalGenerator.show_components">
+<code class="sig-name descname">show_components</code><span class="sig-paren">(</span><em class="sig-param">in_mode='analytic'</em><span class="sig-paren">)</span><a class="headerlink" href="#DSP.SignalGenerator.show_components" title="Permalink to this definition">¶</a></dt>
+<dd><p>show the signal components in the specified mode</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="DSP.SignalGenerator.signal">
+<code class="sig-name descname">signal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DSP.SignalGenerator.signal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="DSP.SimpleMixer.html" title="SimpleMixer"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="DSP.QuadratureSplitter.html" title="QuadratureSplitter"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Physics 0.9 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, T.B.H. Kuiper.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.0.
+    </div>
+  </body>
+</html>

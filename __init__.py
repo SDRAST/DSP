@@ -60,8 +60,7 @@ class DigitalSignal(NP.ndarray):
     s = DigitalSignal(rms=1) with create 1024 Gaussian noise samples with a
     standard deviaton of 1.
     
-    Args
-    =====
+    Args:
       M   - (int) number of samples
       I   - (ndtype=float) real (cos) part of signal
       Q   - (ndtype=float) imaginary (sin) part of signal
@@ -317,10 +316,9 @@ class OTFConvolver(object):
     """
     initialize a convolver
     
-    Args
-    ====
-    FIRfilter - (iterable of float) FIR filter responses
-    data -      (iterable of float) optional samples to process
+    Args:
+      FIRfilter - (iterable of float) FIR filter responses
+      data -      (iterable of float) optional samples to process
     """
     self.logger = logging.getLogger(logger.name+".OTFConvolver")
     self.F = FIRfilter
@@ -395,9 +393,7 @@ class BasicMixer(object):
   """
   def __init__(self, signal=None, LO=None):
     """
-    Args
-    ====
-    
+    Args:    
       signal - signal numpy array with shape (M,)
       LO     - local oscillator numpy array with shape (M,)
     
@@ -642,9 +638,7 @@ def sinc_filter(K, f0=0, mode="complex", factor=None, W=None, M=1024):
   Creates a sinc filter of K taps at a frequency f0 with a width
   between first nulls of 1/factor.
   
-  Args
-  ====
-  
+  Args:
     K      - (int) number of taps
     f0     - (float) center frequency
     mode   - (str) real or complex data
@@ -654,20 +648,19 @@ def sinc_filter(K, f0=0, mode="complex", factor=None, W=None, M=1024):
   
   Notes
   =====
-  The ideal sinc filter FIR formula (from the book) is
+  The ideal sinc filter FIR formula (from the book) is::
   
           W       /  W    \
     F  = --- sinc | --- k |
      k    M       \  M    /
-  
+
   so ``factor`` is ``W/M``.
   
-  Returns
-  =======
-  
+  Returns:
     k       - an array of tap indices centered on 0
     F       - the array of filter weights or taps
     max_tap - the maximum tap index.
+    
   """
   max_tap = K/2
   k = NP.linspace(-max_tap, max_tap, K)

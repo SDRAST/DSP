@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>DigitalSignal &#8212; Physics 0.9 documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="OTFConvolver" href="DSP.OTFConvolver.html" />
+    <link rel="prev" title="ComplexMixer" href="DSP.ComplexMixer.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="DSP.OTFConvolver.html" title="OTFConvolver"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="DSP.ComplexMixer.html" title="ComplexMixer"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Physics 0.9 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="DSP.ComplexMixer.html"
+                        title="previous chapter">ComplexMixer</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="DSP.OTFConvolver.html"
+                        title="next chapter">OTFConvolver</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/DSP.DigitalSignal.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="digitalsignal">
+<h1>DigitalSignal<a class="headerlink" href="#digitalsignal" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="DSP.DigitalSignal">
+<em class="property">class </em><code class="sig-prename descclassname">DSP.</code><code class="sig-name descname">DigitalSignal</code><a class="headerlink" href="#DSP.DigitalSignal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></p>
+<p>Signal with noise and Fourier components</p>
+<p>A signal is defined as a complex quantity:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">I</span> <span class="o">+</span> <span class="n">i</span> <span class="n">Q</span>
+</pre></div>
+</div>
+<p>which corresponds to Euler’s formula:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">ix</span>
+<span class="n">S</span>  <span class="n">e</span>    <span class="o">=</span> <span class="n">S</span> <span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">i</span> <span class="n">S</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+ <span class="mi">0</span>         <span class="mi">0</span>            <span class="mi">0</span>
+</pre></div>
+</div>
+<p>The Fourier components in the imaginary part of the array <cite>Q</cite> are delayed  by
+a quarter cycle with respect to <cite>I</cite>.</p>
+<p>Note that this corresponds to what is known as the inverse transform. If <cite>x</cite>
+is <cite>w t</cite>, then the forward transform is defined as converting from time space
+(<cite>t</cite>) to frequency space (<cite>w</cite>).  In this case we use frequencies <cite>w</cite> to create
+a signal in time <cite>t</cite>.</p>
+<p>This subclass of <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> has an attribute <code class="docutils literal notranslate"><span class="pre">info</span></code> which is a
+<code class="docutils literal notranslate"><span class="pre">dict</span></code> with properties of the signal</p>
+<p class="rubric">Methods Summary</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#DSP.DigitalSignal.spectrum" title="DSP.DigitalSignal.spectrum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spectrum</span></code></a>()</p></td>
+<td><p>Returns the spectrum of the signal, positive frequencies only if the signal is only real values.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Documentation</p>
+<dl class="method">
+<dt id="DSP.DigitalSignal.spectrum">
+<code class="sig-name descname">spectrum</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#DSP.DigitalSignal.spectrum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the spectrum of the signal, positive frequencies only if the signal
+is only real values.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="DSP.OTFConvolver.html" title="OTFConvolver"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="DSP.ComplexMixer.html" title="ComplexMixer"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Physics 0.9 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, T.B.H. Kuiper.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.0.
+    </div>
+  </body>
+</html>

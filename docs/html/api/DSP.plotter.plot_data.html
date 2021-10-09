@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>plot_data &#8212; Physics 0.9 documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="plot_signal_summary" href="DSP.plotter.plot_signal_summary.html" />
+    <link rel="prev" title="mixing_plot" href="DSP.plotter.mixing_plot.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="DSP.plotter.plot_signal_summary.html" title="plot_signal_summary"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="DSP.plotter.mixing_plot.html" title="mixing_plot"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Physics 0.9 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="DSP.plotter.mixing_plot.html"
+                        title="previous chapter">mixing_plot</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="DSP.plotter.plot_signal_summary.html"
+                        title="next chapter">plot_signal_summary</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/DSP.plotter.plot_data.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="plot-data">
+<h1>plot_data<a class="headerlink" href="#plot-data" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="DSP.plotter.plot_data">
+<code class="sig-prename descclassname">DSP.plotter.</code><code class="sig-name descname">plot_data</code><span class="sig-paren">(</span><em class="sig-param">ax</em>, <em class="sig-param">data</em>, <em class="sig-param">interp=0</em>, <em class="sig-param">plot_title=''</em>, <em class="sig-param">x_lbl=''</em>, <em class="sig-param">y_lbl=''</em>, <em class="sig-param">x_lim=()</em>, <em class="sig-param">y_lim=()</em>, <em class="sig-param">gridding=False</em>, <em class="sig-param">leg_loc='best'</em><span class="sig-paren">)</span><a class="headerlink" href="#DSP.plotter.plot_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot data, which is a list of sublists, [[x,y,f,l],[x,y,f,l],…,[x,y,f,l]]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>-</strong><strong>         (</strong><strong>AxesSubplot</strong><strong>) </strong><strong>axis where the data will be plotted</strong> (<em>ax</em>) – </p></li>
+<li><p><strong>-</strong><strong>       (</strong><strong>list of lists</strong><strong>) </strong><strong>with x</strong><strong>,</strong><strong>y</strong><strong>,</strong><strong>f</strong><strong>(</strong><strong>ormat</strong><strong>)</strong><strong>,</strong><strong>l</strong><strong>(</strong><strong>abel</strong><strong>)</strong> (<em>data</em>) – </p></li>
+<li><p><strong>-</strong><strong> (</strong><strong>str</strong><strong>)</strong> (<em>plot_title</em>) – </p></li>
+<li><p><strong>-</strong><strong>      (</strong><strong>str</strong><strong>)</strong> (<em>y_lbl</em>) – </p></li>
+<li><p><strong>-</strong><strong>      (</strong><strong>str</strong><strong>)</strong> – </p></li>
+<li><p><strong>-</strong><strong>      (</strong><strong>tuple</strong><strong>) </strong><strong>minimum and maximum X</strong> (<em>x_lim</em>) – </p></li>
+<li><p><strong>-</strong><strong>      (</strong><strong>tuple</strong><strong>) </strong><strong>minimum and maximum Y</strong> (<em>y_lim</em>) – </p></li>
+<li><p><strong>-</strong><strong>   (</strong><strong>bool</strong><strong>) </strong><strong>whether to draw a grid</strong> (<em>gridding</em>) – </p></li>
+<li><p><strong>-</strong><strong>    (</strong><strong>int</strong><strong> or </strong><strong>str</strong><strong>) </strong><strong>legend location</strong> (<em>leg_loc</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<p>Each sublist contains:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">-</span> <span class="n">the</span> <span class="n">independent</span> <span class="n">variable</span> <span class="n">array</span>
+<span class="n">y</span> <span class="o">-</span> <span class="n">the</span> <span class="n">dependent</span> <span class="n">variable</span> <span class="n">array</span>
+<span class="n">f</span> <span class="o">-</span> <span class="nb">format</span> <span class="k">for</span> <span class="n">plot</span> <span class="n">line</span> <span class="ow">or</span> <span class="n">markers</span>
+<span class="n">l</span> <span class="o">-</span> <span class="n">the</span> <span class="n">label</span> <span class="n">string</span> <span class="k">for</span> <span class="n">this</span> <span class="n">data</span> <span class="nb">set</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="DSP.plotter.plot_signal_summary.html" title="plot_signal_summary"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="DSP.plotter.mixing_plot.html" title="mixing_plot"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Physics 0.9 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, T.B.H. Kuiper.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.0.
+    </div>
+  </body>
+</html>

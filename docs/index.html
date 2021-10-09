@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Single Dish Radio Astronomy Software Tools &#8212; Physics 0.9 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="box" href="api/DSP.box.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api/DSP.box.html" title="box"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">Physics 0.9 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Single Dish Radio Astronomy Software Tools</a><ul>
+<li><a class="reference internal" href="#module-DSP">DSP Package</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#class-inheritance-diagram">Class Inheritance Diagram</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-DSP.plotter">DSP.plotter Module</a><ul>
+<li><a class="reference internal" href="#id1">Functions</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="api/DSP.box.html"
+                        title="next chapter">box</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="single-dish-radio-astronomy-software-tools">
+<h1>Single Dish Radio Astronomy Software Tools<a class="headerlink" href="#single-dish-radio-astronomy-software-tools" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-DSP">
+<span id="dsp-package"></span><h2>DSP Package<a class="headerlink" href="#module-DSP" title="Permalink to this headline">¶</a></h2>
+<p>module DSP - demonstrates digital signal processing concepts</p>
+<p>Provides digital simulations for devices used in analog signal processing.</p>
+<p class="rubric">Notes</p>
+<p><cite>Analytic</cite> signals are complex signals in exponential notation, using Euler’s
+formula. Specifically they are the two signals out of a complex mixer or
+quadrature hybrid, in which all the Fourier components of the imaginary or
+<cite>sine</cite> voltage have been delayed by a quarter cycle:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                                    <span class="o">+</span><span class="n">iwt</span>
+<span class="n">V</span>     <span class="o">=</span> <span class="n">V</span>  <span class="o">+</span> <span class="n">i</span> <span class="n">V</span>  <span class="o">=</span> <span class="n">V</span>  <span class="o">+</span> <span class="n">i</span> <span class="n">V</span>  <span class="o">=</span> <span class="n">V</span>  <span class="n">e</span>
+ <span class="n">anal</span>    <span class="n">r</span>      <span class="n">i</span>    <span class="n">I</span>      <span class="n">Q</span>    <span class="mi">0</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">w</span></code> is the angular frequency.</p>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/DSP.box.html#DSP.box" title="DSP.box"><code class="xref py py-obj docutils literal notranslate"><span class="pre">box</span></code></a>(x)</p></td>
+<td><p>normalized box centered on x=0</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/DSP.interpolate.html#DSP.interpolate" title="DSP.interpolate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interpolate</span></code></a>(data, increase)</p></td>
+<td><p>Interpolate data increasing the number of points by a factor of increase which must be a power of two.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/DSP.is_analytic.html#DSP.is_analytic" title="DSP.is_analytic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_analytic</span></code></a>(signal)</p></td>
+<td><p>checks complex signal for quadrature</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/DSP.is_quadrature.html#DSP.is_quadrature" title="DSP.is_quadrature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_quadrature</span></code></a>(signal)</p></td>
+<td><p>checks complex signal for quadrature</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/DSP.rect_to_polar.html#DSP.rect_to_polar" title="DSP.rect_to_polar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rect_to_polar</span></code></a>(v)</p></td>
+<td><p>Converts complex number to exponential</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/DSP.sinc_filter.html#DSP.sinc_filter" title="DSP.sinc_filter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sinc_filter</span></code></a>(K[, f0, mode, factor, W, M])</p></td>
+<td><p>Creates a sinc filter of K taps at a frequency f0 with a width between first nulls of 1/factor.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/DSP.wbox.html#DSP.wbox" title="DSP.wbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wbox</span></code></a>(x, width)</p></td>
+<td><p>normalized numpy compatible box of width ‘w’ centered on zero.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/DSP.BasicMixer.html#DSP.BasicMixer" title="DSP.BasicMixer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BasicMixer</span></code></a>([signal, LO])</p></td>
+<td><p>Multiplies a signal with an LO to produce a IF</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/DSP.ComplexMixer.html#DSP.ComplexMixer" title="DSP.ComplexMixer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ComplexMixer</span></code></a>([signal, LO])</p></td>
+<td><p>Mixes a real (<code class="docutils literal notranslate"><span class="pre">float</span></code>) signal with a real LO; produces complex IF</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/DSP.DigitalSignal.html#DSP.DigitalSignal" title="DSP.DigitalSignal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DigitalSignal</span></code></a></p></td>
+<td><p>Signal with noise and Fourier components</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/DSP.OTFConvolver.html#DSP.OTFConvolver" title="DSP.OTFConvolver"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OTFConvolver</span></code></a>(FIRfilter[, data])</p></td>
+<td><p>On-the-fly convolution tool</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/DSP.ParallelMixer.html#DSP.ParallelMixer" title="DSP.ParallelMixer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParallelMixer</span></code></a>([signal, LO])</p></td>
+<td><p>Mixes complex signal with same real (<code class="docutils literal notranslate"><span class="pre">float</span></code>) LO</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/DSP.QuadratureHybrid.html#DSP.QuadratureHybrid" title="DSP.QuadratureHybrid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">QuadratureHybrid</span></code></a>()</p></td>
+<td><p>Add components of an analytic signal with +/- pi/2 phase shift</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/DSP.QuadratureSplitter.html#DSP.QuadratureSplitter" title="DSP.QuadratureSplitter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">QuadratureSplitter</span></code></a>()</p></td>
+<td><p>Copy of a real signal with an imaginary component delayed by pi/2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/DSP.SignalGenerator.html#DSP.SignalGenerator" title="DSP.SignalGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SignalGenerator</span></code></a>([mode, M, components, rms])</p></td>
+<td><p>Simulated signal generator for making test signals</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/DSP.SimpleMixer.html#DSP.SimpleMixer" title="DSP.SimpleMixer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SimpleMixer</span></code></a>([signal, LO])</p></td>
+<td><p>Mixes a real (<code class="docutils literal notranslate"><span class="pre">float</span></code>) signal with a real LO to produce a real signal</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="class-inheritance-diagram">
+<h3>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Permalink to this headline">¶</a></h3>
+<div class="graphviz"><img src="_images/inheritance-cfe0acd8a44b2a0f217ebda49fee7de76b89447f.png" alt="Inheritance diagram of DSP.BasicMixer, DSP.ComplexMixer, DSP.DigitalSignal, DSP.OTFConvolver, DSP.ParallelMixer, DSP.QuadratureHybrid, DSP.QuadratureSplitter, DSP.SignalGenerator, DSP.SimpleMixer" usemap="#inheritanced0bc44992b" class="inheritance graphviz" /></div>
+<map id="inheritanced0bc44992b" name="inheritanced0bc44992b">
+<area shape="rect" id="node1" href="api/DSP.BasicMixer.html#DSP.BasicMixer" target="_top" title="Multiplies a signal with an LO to produce a IF" alt="" coords="30,301,123,327"/>
+<area shape="rect" id="node2" href="api/DSP.ComplexMixer.html#DSP.ComplexMixer" target="_top" title="Mixes a real (``float``) signal with a real LO; produces complex IF" alt="" coords="196,252,312,277"/>
+<area shape="rect" id="node6" href="api/DSP.ParallelMixer.html#DSP.ParallelMixer" target="_top" title="Mixes complex signal with same real (``float``) LO" alt="" coords="201,301,307,327"/>
+<area shape="rect" id="node10" href="api/DSP.SimpleMixer.html#DSP.SimpleMixer" target="_top" title="Mixes a real (``float``) signal with a real LO to produce a real signal" alt="" coords="203,351,305,376"/>
+<area shape="rect" id="node3" href="api/DSP.DigitalSignal.html#DSP.DigitalSignal" target="_top" title="Signal with noise and Fourier components" alt="" coords="201,203,307,228"/>
+<area shape="rect" id="node5" href="api/DSP.OTFConvolver.html#DSP.OTFConvolver" target="_top" title="On&#45;the&#45;fly convolution tool" alt="" coords="20,153,133,179"/>
+<area shape="rect" id="node7" href="api/DSP.QuadratureHybrid.html#DSP.QuadratureHybrid" target="_top" title="Add components of an analytic signal with +/&#45; pi/2 phase shift" alt="" coords="7,104,146,129"/>
+<area shape="rect" id="node8" href="api/DSP.QuadratureSplitter.html#DSP.QuadratureSplitter" target="_top" title="Copy of a real signal with an imaginary component delayed by pi/2" alt="" coords="5,55,148,80"/>
+<area shape="rect" id="node9" href="api/DSP.SignalGenerator.html#DSP.SignalGenerator" target="_top" title="Simulated signal generator for making test signals" alt="" coords="13,5,140,31"/>
+</map></div>
+</div>
+<div class="section" id="module-DSP.plotter">
+<span id="dsp-plotter-module"></span><h2>DSP.plotter Module<a class="headerlink" href="#module-DSP.plotter" title="Permalink to this headline">¶</a></h2>
+<p>plotting support for module DSP</p>
+<blockquote>
+<div><p>plot_data      - plots multiple data sets in one pair of axes.</p>
+<dl class="simple">
+<dt>mixing_plot    - plots signal in the upper panel, spectrum of the signal and</dt><dd><p>LO in the middle panel, and the mixed spectrum in the lower
+panel.</p>
+</dd>
+<dt>signal_summary - plots a signal in the top panel, its spectrum in the middle</dt><dd><p>panel, and the power spectrum in the lower panel</p>
+</dd>
+</dl>
+</div></blockquote>
+<div class="section" id="id1">
+<h3>Functions<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/DSP.plotter.display_signals.html#DSP.plotter.display_signals" title="DSP.plotter.display_signals"><code class="xref py py-obj docutils literal notranslate"><span class="pre">display_signals</span></code></a>(sig_spec_pairs)</p></td>
+<td><p>display rows of signals in three columns with signal, spectrum, and phase</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">interpolate</span></code>(data, increase)</p></td>
+<td><p>Interpolate data increasing the number of points by a factor of increase which must be a power of two.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/DSP.plotter.mixing_plot.html#DSP.plotter.mixing_plot" title="DSP.plotter.mixing_plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mixing_plot</span></code></a>(signal, lo, mx, modecode[, show])</p></td>
+<td><p>plots the results of mixing tests</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/DSP.plotter.plot_data.html#DSP.plotter.plot_data" title="DSP.plotter.plot_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_data</span></code></a>(ax, data[, interp, plot_title, …])</p></td>
+<td><p>Plot data, which is a list of sublists, [[x,y,f,l],[x,y,f,l],…,[x,y,f,l]]</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/DSP.plotter.plot_signal_summary.html#DSP.plotter.plot_signal_summary" title="DSP.plotter.plot_signal_summary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_signal_summary</span></code></a>(signal, spectrum[, gridding])</p></td>
+<td><p>Plots a real or analytic signal, its spectrum, and its power spectrum</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/DSP.plotter.signal_summary.html#DSP.plotter.signal_summary" title="DSP.plotter.signal_summary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">signal_summary</span></code></a>(signal, spectrum[, gridding])</p></td>
+<td><p>Plots a real or analytic signal, its spectrum, and its power spectrum</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">subplots</span></code>([nrows, ncols, sharex, sharey, …])</p></td>
+<td><p>Create a figure and a set of subplots.</p></td>
+</tr>
+</tbody>
+</table>
+<p>For an overview of SDRAST and the current status please visit <a class="reference external" href="https://sdrast.github.io/">https://sdrast.github.io/</a>.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="api/DSP.box.html" title="box"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">Physics 0.9 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, T.B.H. Kuiper.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.0.
+    </div>
+  </body>
+</html>

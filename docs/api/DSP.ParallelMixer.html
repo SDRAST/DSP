@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>ParallelMixer &#8212; Physics 0.9 documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="QuadratureHybrid" href="DSP.QuadratureHybrid.html" />
+    <link rel="prev" title="OTFConvolver" href="DSP.OTFConvolver.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="DSP.QuadratureHybrid.html" title="QuadratureHybrid"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="DSP.OTFConvolver.html" title="OTFConvolver"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Physics 0.9 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="DSP.OTFConvolver.html"
+                        title="previous chapter">OTFConvolver</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="DSP.QuadratureHybrid.html"
+                        title="next chapter">QuadratureHybrid</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/DSP.ParallelMixer.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="parallelmixer">
+<h1>ParallelMixer<a class="headerlink" href="#parallelmixer" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="DSP.ParallelMixer">
+<em class="property">class </em><code class="sig-prename descclassname">DSP.</code><code class="sig-name descname">ParallelMixer</code><span class="sig-paren">(</span><em class="sig-param">signal=None</em>, <em class="sig-param">LO=None</em><span class="sig-paren">)</span><a class="headerlink" href="#DSP.ParallelMixer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="DSP.BasicMixer.html#DSP.BasicMixer" title="DSP.BasicMixer"><code class="xref py py-class docutils literal notranslate"><span class="pre">DSP.BasicMixer</span></code></a></p>
+<p>Mixes complex signal with same real (<code class="docutils literal notranslate"><span class="pre">float</span></code>) LO</p>
+<p>The I and Q parts of the signal are mixed with the same LO, as two
+<code class="docutils literal notranslate"><span class="pre">SimpleMixer</span></code> objects operating in parallel.  I and Q do not have to be an
+analytic signal pair.</p>
+<p class="rubric">Methods Summary</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#DSP.ParallelMixer.mixed" title="DSP.ParallelMixer.mixed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mixed</span></code></a>(signal, LO)</p></td>
+<td><p>performs SimpleMixer mixed() on signal I and Q separately</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Documentation</p>
+<dl class="method">
+<dt id="DSP.ParallelMixer.mixed">
+<code class="sig-name descname">mixed</code><span class="sig-paren">(</span><em class="sig-param">signal</em>, <em class="sig-param">LO</em><span class="sig-paren">)</span><a class="headerlink" href="#DSP.ParallelMixer.mixed" title="Permalink to this definition">¶</a></dt>
+<dd><p>performs SimpleMixer mixed() on signal I and Q separately</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="DSP.QuadratureHybrid.html" title="QuadratureHybrid"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="DSP.OTFConvolver.html" title="OTFConvolver"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Physics 0.9 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, T.B.H. Kuiper.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.0.
+    </div>
+  </body>
+</html>

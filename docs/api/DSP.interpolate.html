@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>interpolate &#8212; Physics 0.9 documentation</title>
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="is_analytic" href="DSP.is_analytic.html" />
+    <link rel="prev" title="box" href="DSP.box.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="DSP.is_analytic.html" title="is_analytic"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="DSP.box.html" title="box"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Physics 0.9 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="DSP.box.html"
+                        title="previous chapter">box</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="DSP.is_analytic.html"
+                        title="next chapter">is_analytic</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/DSP.interpolate.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="interpolate">
+<h1>interpolate<a class="headerlink" href="#interpolate" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="DSP.interpolate">
+<code class="sig-prename descclassname">DSP.</code><code class="sig-name descname">interpolate</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">increase</em><span class="sig-paren">)</span><a class="headerlink" href="#DSP.interpolate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interpolate data increasing the number of points by a factor of increase which
+must be a power of two.</p>
+<p class="rubric">Notes</p>
+<p>fft() of N samples returns N spectral points. To interpolate, simply at
+<code class="docutils literal notranslate"><span class="pre">increase-1</span></code> times N zeros and call <code class="docutils literal notranslate"><span class="pre">ifft()</span></code>.</p>
+<p>rfft() of N samples returns N//2+1 complex spectral points. We expect
+N*increase new data points.  Its transform has (N*increase)//2+1 data points.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="DSP.is_analytic.html" title="is_analytic"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="DSP.box.html" title="box"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Physics 0.9 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, T.B.H. Kuiper.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.0.
+    </div>
+  </body>
+</html>
